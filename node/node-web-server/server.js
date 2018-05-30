@@ -51,6 +51,12 @@ app.get('/about', (req, res) => {
   });
 });
 
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Project page'
+  });
+});
+
 app.get('/bad', (req, res) => {
   res.send({
     errorMessage: 'Can\'t fulfill request'
@@ -58,5 +64,5 @@ app.get('/bad', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on port ${ports}`);
+  console.log(`Server running on port ${port}`);
 });
