@@ -155,11 +155,9 @@ describe('PATCH /todos/:id', () => {
       })
       .expect(200)
       .expect((res) => {
-        var todo = res.body.todo;
-
-        expect(todo.text).toBe(text);
-        expect(todo.completed).toBe(true);
-        expect(todo.completedAt).toBeA('number');
+        expect(res.body.todo.text).toBe(text);
+        expect(res.body.todo.completed).toBe(true);
+        expect(res.body.todo.completedAt).toBeA('number');
       })
       .end(done);
   });
